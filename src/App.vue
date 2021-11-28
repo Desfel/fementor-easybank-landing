@@ -39,12 +39,45 @@ export default {
 </script>
 
 <style lang="scss">
+@import '@/theme/variables.scss';
+
 body {
   margin: 0;
 
+  * {
+    box-sizing: border-box;
+  }
+
+  img {
+    vertical-align: middle;
+  }
+
+  p,
+  h1,
+  h2,
   a {
-    font-weight: 500;
+    font-family: $textFont;
+    margin: 0;
+  }
+
+  a {
     text-decoration: none;
+  }
+
+  .site-btn {
+    width: fit-content;
+    padding: 8px 33px;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 28px;
+    color: $white;
+    background: $gradient;
+    border-radius: 22px;
+    transition: opacity .3s ease-in-out;
+
+    &:hover {
+      opacity: .4;
+    }
   }
 
   #app {
@@ -61,29 +94,9 @@ body {
       right: 10px;
     }
 
-    .apple-add-to-home-screen-modal {
-      position: absolute;
-      bottom: 0;
-      right: 0;
-      top: 0;
-      left: 0;
-      height: fit-content;
-      width: fit-content;
-      margin: auto;
-      z-index: 1000;
-    }
-
     .main-wrapper {
-      margin-top: 3.6rem;
-      padding: 20px;
-
       .page-wrapper {
-        width: 60%;
         margin: auto;
-
-        @media screen and (max-width: 1000px) {
-          width: 100%;
-        }
       }
     }
   }

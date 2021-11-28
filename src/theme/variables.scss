@@ -9,3 +9,20 @@ $navbar-height: 3.6rem;
 $navbar-color: #fff;
 $navbar-offline-color: #333;
 $navbar-link-color: #2c3e50;
+
+/* Colors */
+$primaryColor1: hsl(233, 26%, 24%);
+$primaryColor2: hsl(158, 61%, 49%);
+$primaryColor3: hsl(192, 70%, 51%);
+
+$neutralColor1: hsl(233, 8%, 62%);
+$neutralColor2: hsl(220, 16%, 96%);
+$neutralColor3: hsl(0, 0%, 98%);
+
+
+$gradient: linear-gradient(135deg, #33D35E 0%, #2AB6D9 99.58%);
+$white: hsl(0, 0%, 100%);
+
+
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;700&display=swap');
+$textFont: 'Public Sans', sans-serif;
