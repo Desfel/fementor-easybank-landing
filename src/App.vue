@@ -1,6 +1,6 @@
 <template>
-  <div id="app">
-    <nav-bar></nav-bar>
+  <div id="app" :class="{'is-open' : isOpen}">
+    <nav-bar @triggerBurger="triggerBurger"></nav-bar>
     <div class="main-wrapper">
       <router-view />
     </div>
@@ -23,18 +23,24 @@
 import NavBar from '@/components/NavBar'
 import NewContentAvailableToastr from '@/components/NewContentAvailableToastr'
 import AppleAddToHomeScreenModal from '@/components/AppleAddToHomeScreenModal'
-import { mapState, mapActions, mapGetters } from 'vuex'
+import { mapState, mapGetters } from 'vuex'
 
 export default {
+  data() {
+    return {
+      isOpen: false
+    }
+  },
   components: { NavBar, NewContentAvailableToastr, AppleAddToHomeScreenModal },
   computed: {
     ...mapGetters('app', ['newContentAvailable']),
     ...mapState('app', ['showAddToHomeScreenModalForApple', 'refreshingApp'])
   },
-  methods: mapActions('app', [
-    'closeAddToHomeScreenModalForApple',
-    'serviceWorkerSkipWaiting'
-  ])
+  methods: {
+    triggerBurger(value) {
+      this.isOpen = value
+    }
+  }
 }
 </script>
 
@@ -55,6 +61,7 @@ body {
   p,
   h1,
   h2,
+  h3,
   a {
     font-family: $textFont;
     margin: 0;
@@ -81,6 +88,7 @@ body {
   }
 
   #app {
+    position: relative;
     font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
       Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
     -webkit-font-smoothing: antialiased;
@@ -98,6 +106,27 @@ body {
       .page-wrapper {
         margin: auto;
       }
+    }
+
+    &.is-open {
+      &:before {
+        opacity: 1;
+        pointer-events: auto;
+      }
+    }
+
+    &:before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      background: linear-gradient(180deg, #2D314D 0%, rgba(45, 49, 77, 0.0001) 100%);
+      height: 100vh;
+      width: 100%;
+      z-index: 10;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .3s ease-in-out;
     }
   }
 }

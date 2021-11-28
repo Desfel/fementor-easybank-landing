@@ -151,15 +151,15 @@
       </div>
 
       <div class="second-col columns">
-        <a href="#">About Us</a>
-        <a href="#">Contact</a>
-        <a href="#">Block</a>
+        <a class="footer-link" href="#">About Us</a>
+        <a class="footer-link" href="#">Contact</a>
+        <a class="footer-link" href="#">Block</a>
       </div>
 
       <div class="third-col columns">
-        <a href="#">Careers</a>
-        <a href="#">Support</a>
-        <a href="#">Privacy Policy</a>
+        <a class="footer-link" href="#">Careers</a>
+        <a class="footer-link" href="#">Support</a>
+        <a class="footer-link" href="#">Privacy Policy</a>
       </div>
 
       <div class="fourth-col columns">
