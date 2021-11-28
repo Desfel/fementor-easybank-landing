@@ -95,6 +95,7 @@ body {
     -moz-osx-font-smoothing: grayscale;
     font-size: 16px;
     color: #2c3e50;
+    background: $white;
 
     .new-content-available-toastr {
       position: absolute;
